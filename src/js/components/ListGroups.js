@@ -8,19 +8,22 @@ export default class ListGroups extends React.Component {
   }
 
   render() {
-
     const Groups = [
-      "Group 1",
-      "Group 2",
-      "Group 3",
-      "Group 4",
-    ].map((name, i) => <Group key={i} name={name}/> );
+      {groupName: "Group 1", headPlayer: "Gaspar", team: "Arsenal"},
+      {groupName: "Group 2", headPlayer: "Gonza", team: "Barcelona"},
+      {groupName: "Group 3", headPlayer: "Beto", team: "Juventus"},
+      {groupName: "Group 4", headPlayer: "Agustin", team: "Borussia"}
+    ]
+    if(this.props.player !== "") {
+      const player = {groupName: "Group 1", headPlayer: this.props.player, team: "CACA"}
+    }
+    const GroupsRender = Groups.map((group, i) => <Group key={i} group={group}/> );
 
     return (
       <div>
         <h1>Groups</h1>
         <div class="container">
-          {Groups}
+          {GroupsRender}
         </div>
       </div>
     );

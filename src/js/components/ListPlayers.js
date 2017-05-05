@@ -11,7 +11,7 @@ export default class ListPlayers extends React.Component {
       <div>
         <h1>Players</h1>
         <div class="row">{Players}</div>
-        <button type="button" class={"btn " + btnDisableClass} name="button" onClick={this.props.removePlayer}>Choose</button>
+        <button type="button" class={"btn " + btnDisableClass} name="button" onClick={this.props.choosePlayer}>Choose</button>
       </div>
     );
   }

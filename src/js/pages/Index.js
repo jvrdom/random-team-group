@@ -11,21 +11,23 @@ export default class Index extends React.Component {
         "Javier",
         "Jorge",
         "Stefania"
-      ]
+      ],
+      player: ""
     }
   }
 
-  removePlayer(e) {
-    const randomAd = this.state.players[Math.round( Math.random() * (this.state.players.length-1) )];
-    let arr = this.state.players.filter(item => item !== randomAd)
+  choosePlayer(e) {
+    const randomPlayer = this.state.players[Math.round( Math.random() * (this.state.players.length-1) )];
+    let arr = this.state.players.filter(item => item !== randomPlayer)
     this.setState({players: arr})
+    this.setState({player: randomPlayer})
   }
 
   render() {
     return (
       <div>
-        <ListPlayers players={this.state.players} removePlayer={this.removePlayer.bind(this)}/>
-        <ListGroups/>
+        <ListPlayers players={this.state.players} choosePlayer={this.choosePlayer.bind(this)}/>
+        <ListGroups player={this.state.player}/>
       </div>
     );
   }
