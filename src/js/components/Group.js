@@ -3,6 +3,10 @@ import React from "react";
 export default class Group extends React.Component {
   render() {
     const { group } = this.props;
+    var trRow;
+    if (group.newPlayer) {
+      trRow = <tr><td>{group.newPlayer.headPlayer}</td><td>{group.newPlayer.team}</td></tr>
+    }
     return (
       <div>
         <div class="col-xs-6">
@@ -19,18 +23,7 @@ export default class Group extends React.Component {
                 <td>{group.headPlayer}</td>
                 <td>{group.team}</td>
               </tr>
-              <tr>
-                <td>--</td>
-                <td>--</td>
-              </tr>
-              <tr>
-                <td>--</td>
-                <td>--</td>
-              </tr>
-              <tr>
-                <td>--</td>
-                <td>--</td>
-              </tr>
+              {trRow}
             </tbody>
           </table>
         </div>

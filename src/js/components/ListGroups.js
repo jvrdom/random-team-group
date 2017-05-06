@@ -9,15 +9,17 @@ export default class ListGroups extends React.Component {
 
   render() {
     const Groups = [
-      {groupName: "Group 1", headPlayer: "Gaspar", team: "Arsenal"},
-      {groupName: "Group 2", headPlayer: "Gonza", team: "Barcelona"},
-      {groupName: "Group 3", headPlayer: "Beto", team: "Juventus"},
-      {groupName: "Group 4", headPlayer: "Agustin", team: "Borussia"}
+      {index:"A", groupName: "Group A", headPlayer: "Gaspar", team: "Arsenal"},
+      {index:"B", groupName: "Group B", headPlayer: "Gonza", team: "Barcelona"},
+      {index:"C", groupName: "Group C", headPlayer: "Beto", team: "Juventus"},
+      {index:"D", groupName: "Group D", headPlayer: "Agustin", team: "Borussia"}
     ]
-    if(this.props.player !== "") {
-      const player = {groupName: "Group 1", headPlayer: this.props.player, team: "CACA"}
+    if(this.props.newPlayer.randomPlayer !== undefined) {
+      var newPlayer = this.props.newPlayer
+      const player = {groupName: "Group 1", headPlayer: newPlayer.randomPlayer, team: "CACA"}
+      Groups[this.props.newPlayer.randomGroup].newPlayer = player;
     }
-    const GroupsRender = Groups.map((group, i) => <Group key={i} group={group}/> );
+    const GroupsRender = Groups.map((group, i) => <Group key={i} group={group} /> );
 
     return (
       <div>
