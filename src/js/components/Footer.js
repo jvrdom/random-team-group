@@ -3,10 +3,10 @@ import React from "react";
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Copyright &copy; Javier Dominguez</p>
+      <footer class="footer">
+        <div class="container">
+          <div class="content">
+            <p class="has-text-right">Copyright &copy; Javier Dominguez</p>
           </div>
         </div>
       </footer>

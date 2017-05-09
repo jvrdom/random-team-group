@@ -1,29 +1,33 @@
 import React from "react";
 
 export default class Group extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     const { group } = this.props;
-    var trRow;
-    if (group.newPlayer) {
-      trRow = <tr><td>{group.newPlayer.headPlayer}</td><td>{group.newPlayer.team}</td></tr>
+    var trRowRender;
+    if (group.newPlayer.length > 0) {
+      trRowRender = group.newPlayer.map((newPlayer,i) => <tr class="is-selected" key={i}><td>{newPlayer.headPlayer}</td><td>{newPlayer.team}</td></tr> );
     }
     return (
-      <div>
-        <div class="col-xs-6">
+      <div class="column is-one-quarter">
+        <div className="box">
           <h5>{group.groupName}</h5>
-          <table class="table table-striped">
+          <table class="table">
             <thead>
               <tr>
-                <th>Firstname</th>
-                <th>Team</th>
+                <th>Nombre</th>
+                <th>Equipo</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="success">
-                <td>{group.headPlayer}</td>
-                <td>{group.team}</td>
+              <tr>
+                <td>{group.headPlayer.name}</td>
+                <td>{group.headPlayer.team}</td>
               </tr>
-              {trRow}
+              {trRowRender}
             </tbody>
           </table>
         </div>
