@@ -1,16 +1,17 @@
 import React from "react";
 
 export default class Group extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor (props) {
+    super(props);
   }
 
-  render() {
+  render () {
     const { group } = this.props;
     var trRowRender;
     if (group.newPlayer.length > 0) {
-      trRowRender = group.newPlayer.map((newPlayer,i) => <tr class="is-selected" key={i}><td>{newPlayer.headPlayer}</td><td>{newPlayer.team}</td></tr> );
+      trRowRender = group.newPlayer.map((newPlayer, i) => <tr class="is-selected" key={i}><td>{newPlayer.headPlayer}</td><td>{newPlayer.team}</td></tr>);
     }
+
     return (
       <div class="column is-one-quarter">
         <div className="box">

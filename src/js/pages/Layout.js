@@ -3,8 +3,8 @@ import React from "react";
 import Footer from "./../components/Footer";
 
 export default class Layout extends React.Component {
-	render() {
-		return (
+  render () {
+    return (
       <div>
         <div class="container">
           {this.props.children}
@@ -12,6 +12,6 @@ export default class Layout extends React.Component {
         <Footer title={"Other title"}/>
       </div>
     );
-	}
+  }
 }
 

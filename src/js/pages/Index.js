@@ -4,8 +4,8 @@ import ListPlayers from "../components/ListPlayers";
 import ListGroups from "../components/ListGroups";
 
 export default class Index extends React.Component {
-  constructor() {
-    super()
+  constructor () {
+    super();
     this.state = {
       "players" : [
         "Javier",
@@ -23,8 +23,8 @@ export default class Index extends React.Component {
         "Marketing",
         "Guille BI"
       ],
-      "newPlayer": {},
-    }
+      "newPlayer": {}
+    };
   }
 
   choosePlayer () {
@@ -34,7 +34,7 @@ export default class Index extends React.Component {
     this.setState({"newPlayer": {randomPlayer}});
   }
 
-  render() {
+  render () {
     return (
       <div class="container">
         <ListPlayers players={this.state.players} choosePlayer={this.choosePlayer.bind(this)}/>

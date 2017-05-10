@@ -1,11 +1,12 @@
 import React from "react";
 
 export default class Player extends React.Component {
-  render() {
+  render () {
     const { name } = this.props;
     const mediaContentStyle = {
-			margin: "auto"
-		};
+      "margin": "auto"
+    };
+
     return (
       <div class="column is-one-quarter">
         <div class="box is-paddingless">
