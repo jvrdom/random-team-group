@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 import Group from "./Group";
 
@@ -17,7 +18,8 @@ export default class ListGroups extends React.Component {
 
   chooseGroup () {
     var foundIndex;
-    const randomGroup = this.state.groups[Math.round(Math.random() * (this.state.groups.length - 1))];
+    const filteredGroups = _.filter(this.state.groups, function(o) { return o.count < 5 })
+    const randomGroup = filteredGroups[Math.round(Math.random() * (filteredGroups.length - 1))];
     randomGroup.count++;
     foundIndex = this.state.groups.findIndex(x => x.groupName === randomGroup.groupName);
     return foundIndex
