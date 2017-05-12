@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 
 import Group from "./Group";
+import Fixture from "./Fixture";
 
 export default class ListGroups extends React.Component {
   constructor () {
@@ -43,6 +44,7 @@ export default class ListGroups extends React.Component {
           <div class="columns is-multiline">
             {GroupsRender}
           </div>
+          <Fixture groups={this.state.groups}/>
         </div>
       </section>
     );
