@@ -21,7 +21,9 @@ export default class Index extends React.Component {
         "Rafa",
         "Maxi",
         "Marketing",
-        "Guille BI"
+        "Guille BI",
+        "Caca",
+        "Pichi"
       ],
       "newPlayer": {}
     };
