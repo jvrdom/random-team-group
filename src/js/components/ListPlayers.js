@@ -6,6 +6,7 @@ export default class ListPlayers extends React.Component {
   render () {
     const disabled = this.props.players.length === 0;
     const Players = this.props.players.map((name, i) => <Player key={i} name={name}/>);
+    const { choosePlayer } = this.props;
 
     return (
       <section class="section">
@@ -15,7 +16,7 @@ export default class ListPlayers extends React.Component {
             {Players}
           </div>
           <div class="has-text-centered">
-            <button type="button" class="button is-primary is-medium is-outlined" name="button" onClick={this.props.choosePlayer} disabled={disabled}>Elegir Jugador</button>
+            <button type="button" class="button is-primary is-medium is-outlined" name="button" onClick={choosePlayer} disabled={disabled}>Elegir Jugador</button>
           </div>
         </div>
       </section>
