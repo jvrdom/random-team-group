@@ -8,7 +8,9 @@ export default class Group extends React.Component {
     const { group } = this.props;
     var trRowRender;
     if (group.players.length > 0) {
-      trRowRender = group.players.map((player, i) => <tr class="is-selected" key={i}><td>{player.name}</td><td></td></tr>);
+      trRowRender = group.players.map((player, i) =>
+        <tr class="is-selected" key={i}><td>{player.name}</td><td>{player.team}</td></tr>
+      );
     }
 
     return (

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import Layout from "./pages/Layout";
-import Index from "./pages/Index";
+import Index from "./containers/Index";
 
 const app = document.getElementById('app');
 ReactDOM.render(

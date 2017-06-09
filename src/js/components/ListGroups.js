@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 
 import Group from "./Group";
 
@@ -10,7 +9,7 @@ export default class ListGroups extends React.Component {
 
   render () {
     const { groups } = this.props;
-    const GroupsRender = groups.map((group, i) => <Group key={i} group={group}/> );
+    const GroupsRender = groups.map((group, i) => <Group key={i} group={group}/>);
 
     return (
       <section class="section">

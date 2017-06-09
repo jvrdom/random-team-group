@@ -74,7 +74,6 @@
         "keyword-spacing": "error",
         "line-comment-position": "warn",
         "max-depth": "warn",
-        "max-len": "error",
         "max-lines": [
             "warn",
             {
@@ -100,7 +99,6 @@
         "no-continue": "warn",
         "no-inline-comments": "warn",
         "no-lonely-if": "error",
-        "quote-props": "error",
         "semi-spacing": [
             "error",
             {
