@@ -8,8 +8,8 @@ export default class ListPlayers extends React.Component {
     if (!players) {
       return null;
     }
-    const disabled = this.props.players.length === 0;
-    const Players = this.props.players.map((name, i) => <Player key={i} name={name}/>);
+    const disabled = players.length === 0;
+    const Players = players.map((name, i) => <Player key={i} name={name}/>);
 
     return (
       <section class="section">

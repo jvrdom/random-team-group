@@ -5,11 +5,11 @@ export function fetchPlayers() {
   };
 }
 
-export function selectPlayer(id) {
+export function setNewPlayersList(players) {
   return {
-    type: "SELECT_USER",
+    type: "SET_NEW_PLAYERS_LIST",
     payload: {
-      id: id
+      players: players
     }
   };
 }

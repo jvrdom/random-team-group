@@ -5,7 +5,7 @@ import _ from "lodash";
 import ListPlayers from "../components/ListPlayers";
 import ListGroups from "../components/ListGroups";
 
-import { fetchPlayers } from "../actions/PlayersActions";
+import { fetchPlayers, setNewPlayersList } from "../actions/PlayersActions";
 import { fetchGroups } from "../actions/GroupsActions";
 
 class Index extends React.Component {
@@ -32,7 +32,7 @@ class Index extends React.Component {
   _choosePlayer () {
     const randomPlayer = this.props.players[Math.round(Math.random() * (this.props.players.length - 1))];
     let arr = this.props.players.filter(item => item !== randomPlayer);
-    this.setState({"players": arr});
+    this.props.setNewPlayersList(arr);
     const idGroup = this._chooseGroup();
     this.props.groups[idGroup].players.push({"name": randomPlayer, "team": "Random Team"});
   }
@@ -56,6 +56,9 @@ export function mapDispatchToProps(dispatch) {
     },
     fetchGroups: () => {
       dispatch(fetchGroups());
+    },
+    setNewPlayersList: (players) => {
+      dispatch(setNewPlayersList(players));
     }
   };
 }
