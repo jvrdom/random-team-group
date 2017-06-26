@@ -4,9 +4,12 @@ import Player from "./Player";
 
 export default class ListPlayers extends React.Component {
   render () {
+    const { choosePlayer, players } = this.props;
+    if (!players) {
+      return null;
+    }
     const disabled = this.props.players.length === 0;
     const Players = this.props.players.map((name, i) => <Player key={i} name={name}/>);
-    const { choosePlayer } = this.props;
 
     return (
       <section class="section">

@@ -9,6 +9,9 @@ export default class ListGroups extends React.Component {
 
   render () {
     const { groups } = this.props;
+    if (!groups) {
+      return null;
+    }
     const GroupsRender = groups.map((group, i) => <Group key={i} group={group}/>);
 
     return (
