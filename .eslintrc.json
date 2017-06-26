@@ -8,10 +8,14 @@
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "experimentalObjectRestSpread": true
         },
         "sourceType": "module"
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "no-const-assign": "warn",
         "no-this-before-super": "warn",
@@ -22,7 +26,8 @@
         "valid-typeof": "warn",
         "indent": [
             "error",
-            2
+            2,
+            {"SwitchCase": 1}
         ],
         "quotes": [
             "warn",
@@ -69,7 +74,8 @@
         "func-call-spacing": "error",
         "func-style": [
             "error",
-            "expression"
+            "declaration",
+            { "allowArrowFunctions": true }
         ],
         "keyword-spacing": "error",
         "line-comment-position": "warn",
@@ -111,6 +117,8 @@
         "space-infix-ops": "error",
         "space-unary-ops": "error",
         "spaced-comment": "error",
-        "wrap-regex": "error"
+        "wrap-regex": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
     }
 }
